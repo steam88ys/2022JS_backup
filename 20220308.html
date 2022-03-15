@@ -1,4 +1,5 @@
 <script type="text/javascript">
+
 //	alert('Hello, world!');
 /* 주석 */
 let hello = 100;	// 변수
@@ -47,5 +48,31 @@ true
 1 === "1"
 false
 */
+
+if(0) alert("Hello");
+if("") alert("Hello");
+if(null) alert("Hello");
+if(undefined) alert("Hello");
+if(NaN) alert("Hello");
+
+// let user = {name: "John"};
+let user;
+
+if(user) {
+	alert(`Hello ${user.name}`);
+} else {
+	alert("사용자가 없군요...");
+}
+
+let result = 10 > 5 ? "Hello" : "World";
+
+let a1 = !!"non-empty string";
+let a2 = !!null;	// !(!false)	->	boolean 값으로 바꾸기임
+
+let i;
+for(i = 0; i<3; i++) {
+	alert(i);
+}
+alert(i);
 
 </script>
