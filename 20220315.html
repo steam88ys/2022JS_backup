@@ -1,0 +1,84 @@
+<script type="text/javascript">
+	
+
+// function showMessage() {
+// 	alert("Hello");
+// }
+
+// showMessage();
+
+// function showMessage() {
+// 	// 함수 내부에서 사용할 지역 변수 선언
+// 	let message = "Hello";
+// 	// 함수 내부에서만 message 접근 가능
+// 	alert(message);
+// }
+
+// showMessage();
+
+// let userName = "John";
+// function showMessage() {
+// 	let message = "Hello, "+userName;	// Hello, John
+// 	alert(message);
+// 	userName = "Bob";
+// }
+
+// showMessage();
+// alert(userName);	// Bob
+
+// function showMessage(from, text) {
+// 	alert(from + ': '+text);
+// }
+
+// showMessage('Ann', 'Hello');
+// showMessage('Ann'); // Ann: undefined 출력
+// showMessage(); // undefined: undefined
+// showMessage('Ann', 'Hello', 'World'); // Ann: Hello 출력
+
+// function showMessage(from, text = "no text given") {
+// 	alert(from + ': '+text);
+// }
+
+// function sum (a, b) {
+// 	return a + b;
+// }
+
+// let r = sum(4, 5);
+
+// function doNothing() {
+// 	// return;
+// }
+
+// let r2 = doNothing();	// undefined
+
+// let r3 = alert('Hello');
+// // r3 => undefined라면 alert 함수는 리턴값이 없다 (o)
+
+ // let sayHi = function() {
+ // 	alert("Hello");
+ // }
+
+// sayHi();
+
+// let func = sayHi;
+// func();
+
+// let sum = function(a, b) {
+// 	return a + b;
+// }
+// let sumResult = sum(4, 5);
+// alert(sumResult);
+
+function ask(question, yes, no) {
+	if (confirm(question)) yes()
+	else no();
+}
+function showOk() {
+	alert( "동의하셨습니다." );
+}
+function showCancel() {
+	alert( "취소 버튼을 누르셨습니다." );
+}
+ask("동의하십니까?", showOk, showCancel);		// showOk()면 reutrn값이 없어서 undefined로 출력됨
+
+</script>
