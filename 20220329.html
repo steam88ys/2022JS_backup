@@ -1,0 +1,165 @@
+<script type="text/javascript">
+//let user = {};
+//console.log (user.noSuchProp);
+
+/*let user = { name : "John" };
+console.log( "name" in user ); // true
+console.log( "asdf" in user ); // flase*/
+
+/*let user = {
+	name: "John",
+	age : 30,
+	isAdmin: true
+};
+for(let key in user) {
+	console.log(key);
+	console.log(user[key]);
+}*/
+
+/*let message = "Hello!";
+// 원시값 대입으로 인하여 값의 복사가 발생
+let phrase = message;
+phrase = "Bye!";
+
+let user = {
+	name: "John"
+};
+let admin = user;
+admin.name = 'Ken';
+console.log( user.name ); // "ken"
+
+function changeName(user) {
+	// 원본 객체에 영향을 끼침
+	user.name = "Pete";
+}
+changeName(admin);
+console.log( user.name );	// "Pete"
+
+let a = {};
+let b = a;
+
+// 같은 객체를 가리키고 있기 때문에
+console.log( a == b );	// true
+console.log( a === b );	// true
+
+let c = {};
+let d = {};
+console.log( c === d );	// false (서로 다른 비어있는 객체를 가리킴)
+console.log( {} === {} );	// false ( "" 참조가 다름, 내용은 같음)*/
+
+
+/*function copy(target) {		// target : 복사할 대상
+	let o = {};
+
+	for(let k in target) {	// k는 name, age등등등
+		o[k] = target[k];
+	}
+
+	return o;
+}
+let user = {name: "John", age:20 };
+// shallow copy : 얕은 복사
+let c = user;
+// deep copy : 깊은 복사
+let copied = copy(user);
+
+console.log(user == copied);	// false
+copied.name = "Ken";
+console.log(user.name);	// "John"*/
+
+/*let user = {
+	name: "John",
+	age: 30
+	sayHi : function() {
+		alert("안녕하세요!");
+	}
+	sayHi() {
+		alert("안녕하세요!");
+	}
+};*/
+
+/*user.sayHi = function() {
+	alert("안녕하세요!");
+};
+
+user.sayHi();*/
+
+/*function sayHi() {
+	alert("안녕하세요!");
+}
+user.sayHi = sayHi;*/
+
+/*let user = {
+	name: "John",
+	age: 30,
+	sayHi() {
+		alert(this.name);	// "John"
+	}
+};
+
+user.sayHi();	// user가 this임*/
+
+/*let user = { name: "John" };
+let admin = { name: "Admin" };
+
+function sayHi() {
+	alert( this.name );
+}
+user.f = sayHi;
+admin.f = sayHi;
+
+user.f();	// this : user
+admin.f();	// this : admin*/
+
+/*"use strict"	// window에서 undefined로 바뀜
+
+function sayHi() {
+	alert(this);
+}
+sayHi();	// window 객체 (전역 객체)*/
+
+/*"use strict"
+let obj = {
+	x: 100,
+	logThis() {
+	console.log(this);
+	}
+};
+obj.logThis(); // { x: 100 }
+
+let another = { y: 200 };
+another.logThis = obj.logThis;
+another.logThis(); // { y: 200 }
+
+let logThis = another.logThis;
+logTHis();// undefined
+
+let o = {
+	inner: {
+	z: 300
+	}
+};
+o.inner.logThis = obj.logThis;	// 여기서 점 앞의 객체는 o가 아닌 inner
+o.inner.logThis() // { z: 300 }*/
+
+
+/*function User(name) {
+	this.name = name;
+	this.isAdmin = false;
+}
+let u = new User("John");*/
+
+
+function Student (name, age, gender, id) {
+	this.name = name;
+	this.age = age;
+	this.gender = gender;
+	this.id = id;
+	this.sayHi = function() {
+		alert("My name is : "+ this.name );
+	};
+}
+let s = new  Student("김윤서", 18, "w", "2102");
+s.sayHi();	// this는 s
+
+</script>
