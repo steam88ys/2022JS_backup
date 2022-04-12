@@ -1,0 +1,49 @@
+<script type="text/javascript">
+
+// let i, c;
+// for(i =44032; i<50000; i++) {
+// 	c=String.fromCodePoint(i);
+// 	console.log(c);
+// }
+
+// let arr = [ 1, 2, 3, 4 ];
+
+// for(let item of arr) {
+// 	console.log(item);	// 1, 2, 3, 4
+// }
+// arr.forEach(function(item, idx) {
+// 	console.log(item, idx);	// 1 0, 2 1, 3 2, 4 3
+// });
+
+// let f = arr.filter(function(item) {
+// 	return (item % 2) === 0;	// 짝수만 반환 2, 4
+// });
+// console.log(f);
+
+// let t = arr.map(function(item) {
+// 	return item * 2;
+// });
+
+let users = [
+	{id : 1, age: 18, name: "John"},
+    {id : 2, age: 22, name: "Pete"},
+    {id : 3, age: 24, name: "Mary"},
+    {id : 4, age: 15, name: "Smith"},
+];
+
+// let someUsers = users.filter(function(user) {
+// 	return user.age >= 20;
+// });
+
+// someUsers.forEach(function(user) {
+// 	console.log(user.name);
+// });
+
+
+let names = users.map(function(user) {	// 이름만 출력하기 
+										// (map을 transform이라고 생각하기)
+	return user.name;
+});
+console.log(names);
+
+</script>
