@@ -1,0 +1,53 @@
+<script type="text/javascript">
+	
+let arr = [1, 2, 15];
+arr.sort();
+console.log(arr);
+
+
+
+
+arr = [9, 5, 112, 8, 2, 15, 1, 7]
+
+function compareNumeric(a, b) {	// 오름차순
+    if (a > b) return 1;	// 첫 번째 값이 두 번째 값보다 큰 경우 양수 반환
+    if (a == b) return 0;	// 두 값이 같은 경우 0을 반환
+    if (a < b) return -1;	// 첫 번째 값이 두 번째 값보다 작은 경우 음수 반환
+}
+arr.sort(compareNumeric);
+
+
+
+
+arr.sort( (a, b) => a - b );	// 오름차순
+								// a가 큰 경우 양수, 같은 경우 0, a가 작은 경우 음수 반환
+arr.sort( (a, b) => b - a );	// 내림차순
+
+
+
+
+// <실습 문제>
+// 영화 제목 길이 오름차순 정렬
+let movies = ["누구를 위하여 종은 울리나", "기생충", "패왕별희", 
+			  "북북서로 진로를 돌려라", "시"];
+movies.sort((m1, m2) => m1.length - m2.length);				
+
+// 점수 내림차순 정렬 
+let students = [{ name: "가가가", score: 0},
+				{ name: "김철수", score: 100 }, 
+				{ name: "박미림", score: 80 },
+				{ name: "유영희", score: 90 }];
+students.sort((s1, s2) => s2.score - s1.score);
+
+console.log(movies);
+console.log(students);
+
+// 이름 
+students.sort((s1, s2) =>  s1.name.codePointAt(0) - s2.name.codePointAt(0) );
+console.log(students);
+
+let arr = [1, 2, 6, 4, 5];
+arr.reverse();
+console.log(arr);
+
+</script>
