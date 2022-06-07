@@ -1,0 +1,126 @@
+<script type="text/javascript">
+	
+// (1) 객체 두 가지 방법으로 생성
+// "객체 생성자"" 문법
+let dog1 = new Object();
+dog1.name = "Puppy";
+dog1.age = 5;
+dog1.gender = "female";
+
+// "객체 리터럴" 문법
+dog2 = {
+	name : "Puppy",
+	age = 5,
+	gender = "female"
+}	
+const o = {
+	price : 10000,
+	discountRate : 0.2
+}
+
+
+
+
+
+// (2) 객체 리터럴
+let computer = {
+	name: "samsung",
+	version: "21H1",
+	number : "4Q7L9FMR100115",
+	price: 2000000,
+}
+
+// (3) 속성 추가
+// 점 연산자
+computer.acess = "mouse";
+// 대괄호 연산자
+computer["edition"] = "Windows 10 Home";
+
+// (4) delete 연산자를 이용해서 임의의 동적으로 속성 제거
+delete computer.number;
+delete computer["price"];
+console.log(computer);
+
+// (5) 하이픈(-)과 스페이스가 포함된 속성 추가해보기
+computer["version-com 135"] = "Windows 10 Home";
+
+// (6) "값 단축 구문" 이용해서 생성하기
+let name = "samsung";
+let number = "4Q7L9FMR100115";
+com = {
+	name,
+	number
+}
+console.log(com);
+
+
+
+
+
+// (7) changeObject 함수 정의
+const user = {name:"John", age:20};
+const u1 = changeObject(user, "name", "Sam", true);
+const u2 = changeObject(user, "age", 5, false);
+
+function changeObject(target, propName, propValue, changeOriginal) {
+	if( changeOriginal) {
+		// target.propName = propValue;
+		// target["propName"] = propValue;
+		// 위의 두 문장이 같아서 점 표시 불가능
+		target[propName] = propValue;
+		return target;
+	}
+	else {
+		const copy = Object.assign({}, target);
+		copy[propName] = propValue;
+		return copy;
+	}
+}
+
+console.log(user === u1);	// true
+console.log(user === u2);	// false
+console.log(u2);	// {name: "Sam", "age":5}
+
+
+
+
+// (8) query 함수 작성
+const user = {name:"John", age:20};
+query(user);
+
+function query(obj) {
+	const arr = [];
+	for(const key in obj) {
+		arr.push(key);
+	}
+	const s = arr.join(",");
+
+	while(true) {
+		const propName = prompt(`${s} 중 하나 입력`);
+		if(arr.includes(propName)) {
+			alert(obj[propName]);
+			break;
+		}
+	}
+}
+
+
+
+
+
+const user = {id:1, name:"John", age:20};
+
+user.isMinor = function () {
+	if(this.age <20) return false;
+	else return true;
+}
+user.speakName =  function (num = 1) {
+	for(let i = 0; i<num; i++) {
+		console.log(this.name);
+	}
+}
+
+console.log( user.isMinor() );
+user.speakName(3);
+
+</script>
