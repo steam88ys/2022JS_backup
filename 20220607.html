@@ -108,7 +108,7 @@ function query(obj) {
 
 
 
-const user = {id:1, name:"John", age:20};
+/*const user = {id:1, name:"John", age:20};
 
 user.isMinor = function () {
 	if(this.age <20) return false;
@@ -121,6 +121,108 @@ user.speakName =  function (num = 1) {
 }
 
 console.log( user.isMinor() );
-user.speakName(3);
+user.speakName(3);*/
+
+
+
+
+
+const user = {
+	id: 1, 
+	name: "John", 
+	age: 20,
+	// (1) 리터럴 형식으로 메서드 정의
+
+	isMinor : function() {
+		if(this.age <20) return false;
+		else return true;
+	}
+
+	// (2) 단축 구문 형식으로 메서드 정의
+	speakName(n=1) {
+		for(let i = 0; i<num; i++) {
+			console.log(this.name);
+		}
+	}
+};
+
+
+
+
+
+function Point(x, y) {
+	this.x = x;
+	this.y = y;
+}
+let p = new Point (2, 3);
+console.log(p);
+
+
+function User(id, name, age) {
+	this.id = id;
+	this.name = name;
+	this.age = age;
+	// 메서드 추가하는 코드
+	this.isMinor = function() {
+		if(this.age <20) return false;
+		else return true;
+	}
+}
+let u = new  User(1, "John", 20);
+console.log(u);
+
+
+
+
+
+function Bank(balance = 0) {
+	this.balance = balance;
+	this.deposit = function(amount) {
+		this.balance += amount;
+	}
+	this.getBalance = function() {
+		return this.balance;
+	}
+	this.withdraw = function(amount) {
+		if(amount >= this.balance) {
+			let tmp = this.balance;
+			this.balance = 0;
+			return tmp;
+		}
+		else {
+			this.balance -= amount;
+			return amount;
+		}
+	}
+}
+
+let bank = new Bank();
+bank.deposit(1000);
+bank.deposit(2000);
+let b1 = bank.getBalance();
+console.log(b1);	// 3000
+let r1 = bank.withdraw(1000);
+console.log(r1);	// 1000
+let b2 = bank.getBalance();
+console.log(b2);	// 2000
+
+
+
+
+
+function getSummary(arr) {
+	let max = arr[0];
+	let min = arr[0];
+	let sum=0;
+	for(const n of arr) {
+		sum+=n;
+		if(max<n) max = n;
+		if(min>n) min = n;
+	}
+	return {max, min, avg:(sum/arr.length)};
+}
+let summary = getSummary([100, 50, 25]);
+console.log(summary);	// {max:100, min:25, avg:58.333...3336}
+
 
 </script>
